@@ -1,30 +1,11 @@
-let links = document.querySelectorAll("a");
-let app = document.querySelector("#app");
+import { Router } from "./router.js";
 
-const routes = {
-  "/": "/pages/home.html",
-  "/oUniverso": "/pages/oUniverso.html",
-  "/exploracao": '/pages/exploracao.html'
-};
+const router = new Router();
 
-const render = (route) => {
-  let path = routes[route] || null
-  fetch(path)
-  .then((data) => data.text())
-  .then((html) => app.innerHTML = html)
-}
+router.add("/", "/pages/home.html");
+router.add("/oUniverso", "/pages/oUniverso.html");
+router.add("/exploracao", "/pages/exploracao.html");
 
-const handleClick = (event) => {
-  event.preventDefault();
-  let {pathname} = event.target;
-  window.history.pushState({}, "", event.target.href);
 
-  render(pathname)
-};
-
-links.forEach((link) => {
-  link.addEventListener("click", handleClick);
-});
-
-render(window.location.pathname)
+router.initializeLinks();
 
