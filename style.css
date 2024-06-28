@@ -60,6 +60,12 @@ p {
   color: var(--color-text);
 }
 
+nav a.active {
+  color: var(--color-h1-border-select);
+  font-weight: 700;
+  font-size: 22rem;
+}
+
 #home {
   display: grid;
   place-items: center;
