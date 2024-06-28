@@ -8,6 +8,8 @@
   font-size: clamp(4%, 2vw, 6.25%);
   --color-text: #c4c4cc;
   --color-h1-border-select: #e1e1e6;
+  --bg-button-hover: #fff;
+  --color-text--button-hover: #02799d;
 }
 
 body {
@@ -38,24 +40,58 @@ header nav {
   }
 }
 
-main {
+h1 {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 48rem;
+  line-height: 60rem;
+  color: var(--color-h1-border-select);
+}
+
+p {
+  width: 648rem;
+  margin-top: 16rem;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18rem;
+  line-height: 28rem;
+  color: var(--color-text);
+}
+
+#home {
   display: grid;
   place-items: center;
   margin-top: 172rem;
-  h1 {
-    font-family: "Roboto";
-    font-style: normal;
-    font-weight: 700;
-    font-size: 48rem;
-    line-height: 60rem;
-    color: var(--color-h1-border-select);
-  }
   button {
     margin-top: 24rem;
     background: none;
     border: 2rem solid var(--color-h1-border-select);
     padding: 12rem 32rem;
-    color: var(--color-h1-border-select);
     border-radius: 5rem;
+    transition: 300ms ease-out;
+    a {
+      text-decoration: none;
+      font-family: "Roboto";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 14rem;
+      line-height: 24rem;
+      color: var(--color-h1-border-select);
+      text-transform: uppercase;
+    }
   }
+  button:hover {
+    background-color: var(--bg-button-hover);
+    border: none;
+    a {
+      color: var(--color-text--button-hover);
+    }
+  }
+}
+
+#universe,
+#explore {
+  padding: 62rem 102rem;
 }
